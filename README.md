@@ -49,7 +49,7 @@ SELECT Beverage,Calories as 'highest_calorie_drink'
 FROM drink_menu.drink_menu_table
 where Calories = (SELECT MAX(Calories) from drink_menu.drink_menu_table);
 
-or
+/* or */
 
 SELECT Beverage,Calories as 'highest_calories_drink'
 FROM drink_menu.drink_menu_table 
