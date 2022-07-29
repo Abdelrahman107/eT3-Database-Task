@@ -66,7 +66,7 @@ LIMIT 1
 
 2. What is the average calorie amount for each drink category
  ```sql
-SELECT Beverage_category , count(Beverage_category)
+SELECT Beverage_category , AVG(Calories)
 FROM drink_menu.drink_menu_table
 GROUP BY Beverage_category
 ```
