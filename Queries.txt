@@ -1,0 +1,54 @@
+/*  1. Which drink has the highest calories from the dataset ?
+answer: 'White Chocolate Mocha (Without Whipped Cream)' */ 
+SELECT Beverage,Calories as 'highest_calories_drink'
+FROM drink_menu.drink_menu_table 
+ORDER BY Calories DESC
+LIMIT 1
+
+
+
+
+or --------
+
+
+
+
+/*  1. Which drink has the highest calories from the dataset ?
+answer: 'White Chocolate Mocha (Without Whipped Cream)' */ 
+SELECT Beverage,Calories as 'highest_calorie_drink'
+FROM drink_menu.drink_menu_table
+where Calories = (SELECT MAX(Calories) from drink_menu.drink_menu_table);
+
+
+
+
+
+
+----------------------------------------------------
+
+
+/*  2.What is the average calorie amount for each drink category
+*/ 
+SELECT Beverage_category , count(Beverage_category)
+FROM drink_menu.drink_menu_table
+GROUP BY Beverage_category
+
+
+----------------------------------------------------
+
+
+
+/*  3.  Which drinks have below average calorie amount ?
+*/ 
+SELECT Beverage as "Drinks below average value (201.04)",Calories
+FROM drink_menu.drink_menu_table
+where Calories < (select avg(calories) from drink_menu.drink_menu_table)
+
+
+
+
+
+
+
+
+
